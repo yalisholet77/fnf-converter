@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Loading Screen</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="loading-container">
+    <h2>Loading...</h2>
+    <div class="loading-bar"></div>
+    <button onclick="redirectToHome()">Open Home Screen</button>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Simulate a loading progress
+    let width = 1;
+    const loadingBar = document.querySelector('.loading-bar');
+    const interval = setInterval(() => {
+      if (width >= 100) {
+        clearInterval(interval);
+      } else {
+        width++;
+        loadingBar.style.width = `${width}%`;
+      }
+    }, 30); // Adjust the speed of the loading bar here (lower value for faster loading)
+  </script>
+</body>
+</html>
